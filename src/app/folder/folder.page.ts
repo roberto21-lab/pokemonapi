@@ -8,11 +8,27 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FolderPage implements OnInit {
   public folder: string;
+  pokemons = [];
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+    for (let idPokemon = 1; idPokemon < 200; idPokemon++) {
+      this.getNombreAsync(idPokemon);
+    }
   }
 
+  async getNombreAsync(poke) {
+    try {
+      // https://pokeapi.co/api/v2/pokemon/1
+      const resPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${poke}`)
+      const pokemon = await resPokemon.json()
+      this.pokemons.push(pokemon)
+    }
+    catch (error) {
+      console.log(error);
+    }
+  };
 }
+

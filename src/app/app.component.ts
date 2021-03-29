@@ -6,13 +6,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Pokemones', url: '/folder/pokemones', icon: 'list-outline' },
+    { title: 'Tipos de pokemones', url: '/folder/tipos', icon: 'accessibility-outline' },
+    { title: 'Habilidades', url: '/folder/hablidades', icon: 'barbell-outline' },
+    { title: 'Favoritos', url: '/folder/favoritos', icon: 'heart-outline' },
+    
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}
 }
