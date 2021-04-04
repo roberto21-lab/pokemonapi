@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>tipos de pokemon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-button (clik)="gocard()" 
+*ngFor="let tipo of tipos;" 
+class="mini-taj hola"
+[ngClass]="{ 
+  'btn-fire': 'fire' == tipo.name,
+  'btn-water': 'water' == tipo.name,
+  'btn-normal': 'normal' == tipo.name,
+  'btn-bug': 'bug' == tipo.name,
+  'btn-electric': 'electric' == tipo.name,
+  'btn-ghost': 'ghost' == tipo.name,
+  'btn-dragon': 'dragon' == tipo.name,
+  'btn-fighting': 'fighting' == tipo.name,
+  'btn-grass': 'grass' == tipo.name,
+  'btn-fairy': 'fairy' == tipo.name,
+  'btn-veneno': 'poison' == tipo.name,
+  'btn-ground': 'ground' == tipo.name,
+  'btn-psychic': 'psychic' == tipo.name,
+  'btn-rock': 'rock' == tipo.name,
+  'btn-ice': 'ice' == tipo.name,
+  'btn-dark': 'dark' == tipo.name}">{{tipo.name}}</ion-button>
+</ion-content>

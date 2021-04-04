@@ -5,21 +5,157 @@
     margin-top: 30px;
     margin-bottom: 30px;
     border-radius: 20px;
-    border: rgb(90, 117, 90) solid 2px;
+    border: solid 2px;
     padding: 10px;
     position: relative;
+    .mini-taj{
+        width: 50%;
+        
+        border-radius: 20px;
+        text-align: center;
+        color: white;
+        font-size: medium;
+             
+    }
+
+}
+
+.tarjeta-acero{
+    border-color:LightGrey;
+    .mini-taj{
+        background: LightGrey;
+    }
+}
+
+.tarjeta-water{
+    border-color:RoyalBlue;
+    .mini-taj{
+        background: RoyalBlue;
+    }
+}
+
+.tarjeta-bug{
+    border-color:YellowGreen;
+    .mini-taj{
+        background: YellowGreen;
+    }
+}
+
+.tarjeta-dragon{
+    border-color:MediumSlateBlue;
+    .mini-taj{
+        background: MediumSlateBlue;
+    }
+}
+
+.tarjeta-electric{
+    border-color:rgb(141, 141, 12);
+    .mini-taj{
+        background: rgb(141, 141, 12);
+    }
+}
+
+.tarjeta-ghost{
+    border-color:Purple;
+    .mini-taj{
+        background: Purple;
+    }
+}
+
+.tarjeta-fire{
+    border-color:Crimson;
+    .mini-taj{
+        background: Crimson;
+    }
+}
+
+.tarjeta-fairy{
+    border-color:rgb(255, 136, 238);
+    .mini-taj{
+        background: rgb(255, 136, 238);
+    }
+}
+
+.tarjeta-ice{
+    border-color:AquaMarine;
+    .mini-taj{
+        background: AquaMarine;
+    }
+}
+
+.tarjeta-fighting{
+    border-color:Firebrick;
+    .mini-taj{
+        background: Firebrick;
+    }
+}
+
+.tarjeta-normal{
+    border-color:rgb(116, 116, 121);
+    .mini-taj{
+        background:rgb(116, 116, 121);
+    }
+}
+
+.tarjeta-grass{
+    border-color:Lime;
+    .mini-taj{
+        background:Lime;
+    }
+}
+
+.tarjeta-psychic{
+    border-color:rgb(214, 27, 214);
+    .mini-taj{
+        background:rgb(214, 27, 214);
+    }
+}
+
+.tarjeta-rock{
+    border-color:Peru;
+    .mini-taj{
+        background:Peru;
+    }
+}
+
+.tarjeta-sinistro{
+    border-color:SlateGray;
+    .mini-taj{
+        background:SlateGray;
+    }
+}
+
+.tarjeta-ground{
+    border-color:rgb(124, 104, 78);
+    .mini-taj{
+        background:rgb(124, 104, 78);
+    }
+}
+
+.tarjeta-veneno{
+    border-color:Mediumpurple;
+    .mini-taj{
+        background:Mediumpurple;
+    }
+}
+
+.tarjeta-dark{
+    border-color:rgb(17, 14, 24);
+    .mini-taj{
+        background:rgb(17, 14, 24);
+    }
 }
 
 .numero{
     text-align: right;
-    color: rgb(90, 117, 90);
+    color:black;
 
 }
 
 .nombre{
     
     margin-bottom: 5px;
-    color: rgb(90, 117, 90);
+    color:black;
     
 }
 
@@ -29,9 +165,9 @@
     border-radius: 20px;
     text-align: center;
     color: white;
-    font-size: medium;
-         
+    font-size: medium;      
 }
+
 .hola{
     margin-top: 10px;
 }
@@ -53,7 +189,6 @@ img{
 .imagenpokeb{
     width: 70px;
 }
-
 
 
 

@@ -1,9 +1,29 @@
-<div class="tarjeta">
+<div class="tarjeta " [ngClass]="{ 
+'tarjeta-fire': 'fire' == data.types[0].type.name,
+'tarjeta-water': 'water' == data.types[0].type.name,
+'tarjeta-normal': 'normal' == data.types[0].type.name,
+'tarjeta-bug': 'bug' == data.types[0].type.name,
+'tarjeta-electric': 'electric' == data.types[0].type.name,
+'tarjeta-ghost': 'ghost' == data.types[0].type.name,
+'tarjeta-dragon': 'dragon' == data.types[0].type.name,
+'tarjeta-fighting': 'fighting' == data.types[0].type.name,
+'tarjeta-grass': 'grass' == data.types[0].type.name,
+'tarjeta-fairy': 'fairy' == data.types[0].type.name,
+'tarjeta-veneno': 'poison' == data.types[0].type.name,
+'tarjeta-ground': 'ground' == data.types[0].type.name,
+'tarjeta-psychic': 'psychic' == data.types[0].type.name,
+'tarjeta-rock': 'rock' == data.types[0].type.name,
+'tarjeta-ice': 'ice' == data.types[0].type.name,
+'tarjeta-dark': 'dark' == data.types[0].type.name
+
+}" >
   <div class="numero"><strong>#00{{data.id}}</strong></div>
   <div class="nombre"><strong>{{data.name}}</strong></div>
-  <div class="mini-taj">{{data.types[0].type.name}}</div>
-  <div class="mini-taj hola">{{data.species.name}}</div>
+  <!-- <div class="mini-taj">{{data.types[0].type.name}}</div> -->
+  <div *ngFor="let type of data.types;  " class="mini-taj hola">{{type.type.name}}</div>
   <div class="imagen"> <img class="imagenpokeb" src="../../assets/580b57fcd9996e24bc43c31f.png"></div>
   <div class="imagen"><img [src]="imgPokemon">
   </div>
 </div>
+
+

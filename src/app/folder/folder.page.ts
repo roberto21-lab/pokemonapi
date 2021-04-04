@@ -10,6 +10,7 @@ export class FolderPage implements OnInit {
   public folder: string;
   pokemons = [];
 
+
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
@@ -25,6 +26,12 @@ export class FolderPage implements OnInit {
       const resPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${poke}`)
       const pokemon = await resPokemon.json()
       this.pokemons.push(pokemon)
+      this.pokemons.sort(function (prev, next) {
+        return prev.id - next.id
+        
+      })
+    
+
     }
     catch (error) {
       console.log(error);
