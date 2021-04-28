@@ -1,4 +1,4 @@
-<div class="tarjeta " [ngClass]="{ 
+<div class="tarjeta" (click)="go(data.id)"  [ngClass]="{ 
 'tarjeta-fire': 'fire' == data.types[0].type.name,
 'tarjeta-water': 'water' == data.types[0].type.name,
 'tarjeta-normal': 'normal' == data.types[0].type.name,
@@ -17,6 +17,7 @@
 'tarjeta-dark': 'dark' == data.types[0].type.name
 
 }" >
+  
   <div class="numero"><strong>#00{{data.id}}</strong></div>
   <div class="nombre"><strong>{{data.name}}</strong></div>
   <!-- <div class="mini-taj">{{data.types[0].type.name}}</div> -->

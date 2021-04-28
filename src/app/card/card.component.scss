@@ -8,6 +8,11 @@
     border: solid 2px;
     padding: 10px;
     position: relative;
+    background: rgb(249 249 249 / 52%);
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+    backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid #3a8a3a8c;
     .mini-taj{
         width: 50%;
         
@@ -174,6 +179,7 @@
 
 img{
     width: 60px;
+    filter: drop-shadow(2px 7px 15px black);
     
      
 }
@@ -188,6 +194,7 @@ img{
 
 .imagenpokeb{
     width: 70px;
+    opacity: 0.6;
 }
 
 

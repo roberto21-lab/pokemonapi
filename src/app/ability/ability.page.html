@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ability</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img class="imagenpokeb" src="assets/580b57fcd9996e24bc43c31f.png">
+<ion-list tappable  (click)="hability(ability)"
+*ngFor="let ability of abilitys;">
+<ion-item>{{ability.name}}</ion-item>
+</ion-list >
+</ion-content>

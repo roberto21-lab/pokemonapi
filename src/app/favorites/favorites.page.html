@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>favorites</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content [fullscreen]="true">
+    <ion-grid>
+      <ion-row>
+        <ion-col  *ngFor="let favorito of brian"  size-xs="6" size-sm="4" size-lg="3" >
+            <app-card [data]="favorito" ></app-card>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+
+</ion-content>

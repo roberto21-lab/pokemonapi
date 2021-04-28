@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-<ion-button (clik)="gocard()" 
+<ion-button (click)="type(tipo)"
 *ngFor="let tipo of tipos;" 
 class="mini-taj hola"
 [ngClass]="{ 
@@ -25,4 +25,7 @@ class="mini-taj hola"
   'btn-rock': 'rock' == tipo.name,
   'btn-ice': 'ice' == tipo.name,
   'btn-dark': 'dark' == tipo.name}">{{tipo.name}}</ion-button>
+
+  <app-card></app-card>
+
 </ion-content>

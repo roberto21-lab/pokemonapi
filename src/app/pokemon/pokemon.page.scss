@@ -1,0 +1,239 @@
+ion-button{
+    --background: transparent;
+    --box-shadow: none
+}
+
+
+
+.card{
+        
+    width: 90%;
+    
+    margin: auto;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgb(255 255 255 / 49%);
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+    backdrop-filter: blur( 4px );
+    border: 1px solid rgb(255 255 255 / 14%);
+   
+      
+}
+
+ion-progress-bar{
+        width: 70%;
+}
+
+.heart-on{
+        color: red;
+}
+
+.about{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        strong{
+                width: 40%;
+        }
+        p{
+                color: #55575d;
+                font-size: 15px;
+                font-weight: 600;    
+        }
+}
+
+.container-progress{
+        display: flex;
+    align-items: center;
+    justify-content: space-between;
+    strong{
+            width: 30%;
+    }
+    p{
+        width: 7%;
+        
+    color: #0000008c;
+    font-size: 0.7rem;
+    font-weight: 800;
+    }
+}
+
+.container-segment-value{
+        margin-top: 30px;
+        overflow-y: auto;
+        max-height: 19rem;
+        
+        ion-list{
+                background: transparent;
+                
+        }
+        ion-item{
+                --background: transparent;
+               
+        }
+}
+
+.minicard{
+        text-align: center;
+    width: 20%;
+    border-radius: 20px;
+    background: rgb(255 255 255 / 49%);
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+    backdrop-filter: blur( 4px );
+    border: 1px solid rgb(255 255 255 / 14%);
+}
+
+.btn-btn{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.nombrepoke{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    width: 200px;
+    border-radius: 20px;
+    
+}
+
+.vanessa{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+   
+   
+}
+
+.imagenpokeb{
+    width: 30%;
+    position: relative;
+    left: 290px;
+}
+.imagenpokemon{
+    width: 250px;
+    position: relative;
+    left: 245px;
+    filter: drop-shadow(2px 4px 20px black);
+}
+
+.caja-img{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+}
+
+.tarjeta-acero{
+    background: LightGrey;
+    opacity: 20px;
+
+}
+
+.tarjeta-water{
+    
+        background: RoyalBlue;
+    
+}
+
+.tarjeta-bug{
+    
+        background: YellowGreen;
+    
+}
+
+.tarjeta-dragon{
+    
+        background: MediumSlateBlue;
+    
+}
+
+.tarjeta-electric{
+    
+        background: rgb(141, 141, 12);
+    
+}
+
+.tarjeta-ghost{
+    
+        background: Purple;
+    
+}
+
+.tarjeta-fire{
+    
+        background: #981111f5;
+        
+    
+}
+
+.tarjeta-fairy{
+    
+        background: rgb(255, 136, 238);
+    
+}
+
+.tarjeta-ice{
+    
+        background: AquaMarine;
+    
+}
+
+.tarjeta-fighting{
+    
+        background: Firebrick;
+    
+}
+
+.tarjeta-normal{
+    
+        background:rgb(116, 116, 121);
+    
+}
+
+.tarjeta-grass{
+    
+        background:Lime;
+    
+}
+
+.tarjeta-psychic{
+    
+        background:rgb(214, 27, 214);
+    
+}
+
+.tarjeta-rock{
+    
+        background:Peru;
+    
+}
+
+.tarjeta-sinistro{
+    
+        background:SlateGray;
+    
+}
+
+.tarjeta-ground{
+   
+        background:rgb(124, 104, 78);
+    
+}
+
+.tarjeta-veneno{
+    
+        background:Mediumpurple;
+    
+}
+
+.tarjeta-dark{
+    
+        background:rgb(17, 14, 24);
+    
+}

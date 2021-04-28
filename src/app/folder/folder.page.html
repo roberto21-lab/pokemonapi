@@ -10,10 +10,11 @@
 <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let pokemon of pokemons"  size-xs="6" size-sm="4" size-lg="3" >
+      <ion-col  *ngFor="let pokemon of pokemons"  size-xs="6" size-sm="4" size-lg="3" >
           <app-card [data]="pokemon" ></app-card>
       </ion-col>
     </ion-row>
 </ion-grid>
+
 
 </ion-content>

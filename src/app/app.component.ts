@@ -10,8 +10,9 @@ export class AppComponent {
   public appPages = [
     { title: 'Pokemones', url: '/folder/pokemones', icon: 'list-outline' },
     { title: 'Tipos de pokemones', url: 'types', icon: 'accessibility-outline' },
-    { title: 'Habilidades', url: '/folder/hablidades', icon: 'barbell-outline' },
-    { title: 'Favoritos', url: '/folder/favoritos', icon: 'heart-outline' },
+    { title: 'Habilidades', url: 'ability', icon: 'barbell-outline' },
+    { title: 'Favoritos', url: 'favorites', icon: 'heart-outline' },
+    
   ];
   
   constructor() {}
