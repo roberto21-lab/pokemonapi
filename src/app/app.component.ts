@@ -13,8 +13,34 @@ export class AppComponent {
     { title: 'Habilidades', url: 'ability', icon: 'barbell-outline' },
     { title: 'Favoritos', url: 'favorites', icon: 'heart-outline' },
     
+    
   ];
+
+ darkMode: boolean = true;
   
+
+
   constructor() {}
+
+  ngOnInit(){
+    this.checkDarkTheme()
+  }
+
+  cambio(){
+    console.log('cambio')
+    this.darkMode = !this.darkMode; 
+
+    document.body.classList.toggle('dark')
+  }
+
+  checkDarkTheme() {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    console.log(prefersDark)
+    if(prefersDark.matches){
+      document.body.classList.toggle('dark')
+    }
+    this.cambio()
+  }
+
 }
 

@@ -10,11 +10,17 @@
 <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row>
-      <ion-col  *ngFor="let pokemon of pokemons"  size-xs="6" size-sm="4" size-lg="3" >
-          <app-card [data]="pokemon" ></app-card>
+      <ion-col *ngFor="let pokemon of pokemons; let i = index" size-xs="6" size-sm="4" size-lg="3">
+        <app-card [data]="pokemon"></app-card>
       </ion-col>
     </ion-row>
-</ion-grid>
+  </ion-grid>
 
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="loading...">
+
+    </ion-infinite-scroll-content>
+
+  </ion-infinite-scroll>
 
 </ion-content>

@@ -10,6 +10,13 @@
             </div>
             Pokedex Menu
           </ion-list-header>
+          <ion-list>
+            <ion-item>
+              <ion-icon slot="start" name="moon"></ion-icon>
+          <ion-label>Dark Theme</ion-label>
+          <ion-toggle slot="end" (ionChange)="cambio()"></ion-toggle> 
+            </ion-item>
+          </ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root"  [queryParams]="p.title == 'Favoritos'? {favorites: true} : {}" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon [name]="p.icon"></ion-icon>

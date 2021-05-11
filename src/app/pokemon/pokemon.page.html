@@ -29,25 +29,41 @@
       <ion-button [routerLink]="['/folder/Inbox']">
         <ion-icon name="arrow-undo-outline"></ion-icon>
       </ion-button>
-      <ion-button  (click)="favoritos( )">
+      <ion-button (click)="favoritos( )">
         <ion-icon *ngIf="!btnFavorite" class="icon" name="heart-outline"></ion-icon>
-        
-        <ion-icon  *ngIf="btnFavorite" class="icon heart-on" name="heart"></ion-icon>
+
+        <ion-icon *ngIf="btnFavorite" class="icon heart-on" name="heart"></ion-icon>
       </ion-button>
-
-
     </div>
-    <div class="nombrepoke minicard">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col  size-xs="6" size-sm="4" size-lg="3">
+          <h1><strong>{{poke.name}}</strong></h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col  size-xs="12" size-sm="4" size-lg="3">
+          <div class="vanessa">
+            <div *ngFor="let type of poke.types;  " class="minicard">
+              <h2 class="acomodarcosasxd"> {{type.type.name}}</h2>
+            </div>
+            <div class="minicard">
+              <h2 class="acomodarcosasxd"> {{poke.id}}</h2>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+    <!-- <div class="nombrepoke minicard">
       <h1><strong>{{poke.name}}</strong></h1>
-    </div>
-    <div class="vanessa">
-      <div *ngFor="let type of poke.types;  " class="minicard">
-        <h2><strong>Tipo:</strong> {{type.type.name}}</h2>
-      </div>
-      <div class="minicard">
-        <h2><strong>N# ID:</strong> {{poke.id}}</h2>
-      </div>
-    </div>
+    </div> -->
+  
     <div class="caja-img">
       <div><img class="imagenpokemon" [src]="'https://pokeres.bastionbot.org/images/pokemon/'+ poke.id +'.png'"></div>
       <div><img class="imagenpokeb" src="assets/580b57fcd9996e24bc43c31f.png"></div>
@@ -56,28 +72,34 @@
       <ion-segment [(ngModel)]="segment">
         <ion-segment-button (click)="selectores(value)" value="about">
           <ion-label><strong>
-              <h2>ABOUT</h2>
+              <h2 class="acomodarcosasxd">ABOUT</h2>
             </strong></ion-label>
         </ion-segment-button>
         <ion-segment-button (click)="selectores(value)" value="base-stats">
           <ion-label><strong>
-              <h2>BASE STATS</h2>
+              <h2 class="acomodarcosasxd">BASE-STATS</h2>
             </strong></ion-label>
         </ion-segment-button>
         <ion-segment-button (click)="selectores(value)" value="moves">
           <ion-label><strong>
-              <h2>MOVES</h2>
+              <h2 class="acomodarcosasxd">MOVES</h2>
             </strong></ion-label>
         </ion-segment-button>
       </ion-segment>
-      <div class="container-segment-value" *ngIf="segment == 'about'" >
+      <div class="container-segment-value" *ngIf="segment == 'about'">
         <!-- ABOUT -->
 
-        <div class="about"> <strong>Height:</strong> <p>{{poke.height}}</p> </div>
+        <div class="about"> <strong>Height:</strong>
+          <p>{{poke.height}}</p>
+        </div>
         <br>
-        <div class="about"><strong>Wight:</strong> <p>{{poke.weight}}</p></div>
+        <div class="about"><strong>Wight:</strong>
+          <p>{{poke.weight}}</p>
+        </div>
         <br>
-        <div class="about" *ngFor="let ability of poke.abilities;"><strong>Abilities:</strong> <p>{{ability.ability.name}}</p></div>
+        <div class="about" *ngFor="let ability of poke.abilities;"><strong>Abilities:</strong>
+          <p>{{ability.ability.name}}</p>
+        </div>
         <br>
       </div>
       <div class="container-segment-value" *ngIf="segment  ==  'base-stats' ">
@@ -85,19 +107,19 @@
         <!-- <h1><strong>{{poke.stats}}</strong></h1> -->
         <!-- <div *ngFor="let type of poke.types;  " class="minicard">
           <h2><strong>Tipo:</strong> {{type.type.name}}</h2> -->
-          <!--  -->
+        <!--  -->
 
-          <ng-container *ngFor="let stat of poke.stats">
-            <div class="container-progress">
-              <strong >{{stat.stat.name}}:</strong>
-              <p>{{stat.base_stat}}% </p>
-              <ion-progress-bar [value]="stat.base_stat  /  100"></ion-progress-bar>
-            </div>
-            <br>
-          </ng-container>
-        
+        <ng-container *ngFor="let stat of poke.stats">
+          <div class="container-progress">
+            <strong>{{stat.stat.name}}:</strong>
+            <p>{{stat.base_stat}}% </p>
+            <ion-progress-bar [value]="stat.base_stat  /  100"></ion-progress-bar>
+          </div>
+          <br>
+        </ng-container>
+
       </div>
-      <div >
+      <div>
         <div class="container-segment-value" *ngIf="segment == 'moves'">
           <!-- MOVES -->
           <ion-list *ngFor="let move of poke.moves">
