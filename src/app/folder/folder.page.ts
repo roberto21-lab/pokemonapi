@@ -11,8 +11,11 @@ export class FolderPage implements OnInit {
   public folder: string;
   pokemons: any[] = [];
   type = '';
+  tipos: any = [];
   start: number = 1;
   end: number = 21;
+  limit: number = 400;
+
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
   constructor(
@@ -41,6 +44,11 @@ export class FolderPage implements OnInit {
 
   ngOnInit() {
     let tipo = this.activatedRoute.snapshot.queryParams['tipo']; // aqui obtengo el valor del queryparams "tipo"
+   
+    this.getPokemonFilter(tipo);
+     
+    
+    console.log("quelo menor qlq askjdhajsdaksd",tipo)
     let hability = this.activatedRoute.snapshot.queryParams['hability'];
     // let favorites = this.activatedRoute.snapshot.queryParams['favorites'];
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
@@ -60,70 +68,70 @@ export class FolderPage implements OnInit {
     }
   }
 
+  async getPokemonFilter(tipo) {
+    
+    try {
+      // https://pokeapi.co/api/v2/pokemon/1
+      
+      const restipo = await fetch(`https://pokeapi.co/api/v2/type/${tipo}`);
+      const filterPokemon = await restipo.json();
+      this.tipos = filterPokemon
+      for (let tipoPokemon = 0; tipoPokemon <this.tipos.pokemon.length; tipoPokemon++) {
+          console.log(this.tipos.pokemon[tipoPokemon]         )
+          this.getPokemonAsync(this.tipos.pokemon[tipoPokemon].pokemon.name)
+      }
+      
+    } catch (error) {
+      console.log(error);
+    }
+    console.log("ashbdahsdbahsbdasbdabs" ,this.tipos)
+  }
+
   
   toggleInfiniteScroll() {
-    this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
+    this.infiniteScroll.disabled =!this.infiniteScroll.disabled;
   }
 
   loadData(event) {
-    console.log('cargando.....');
+    console.log('cargando.....', this.pokemons.length);
+    if( this.pokemons.length >= this.limit){
+      console.log("pokemones max 400", this.limit)
+      this.infiniteScroll.disabled = true;
+      return;
+    } 
     
+    //aki tengo que preguntar si la variable limt es igual a el arreglo de pokemones 
+      
     for (let idPokemon = this.start; idPokemon < this.end; idPokemon++) {
       this.getPokemonAsync(idPokemon); // fetch de pokemon por id (idPokemon)
       this.start = idPokemon + 1;
+      if (this.start >= this.limit) {
+        console.log('brak frenate borralo')
+        break;
+      }
     }
     
     this.end = this.end + 19;
     // this.start = this.start;
     // this.end = this.end;
     event.target.complete();
-    // this.infiniteScroll.disabled = true;
+
+  
     return;
-
-
-    // setTimeout(() => {   
-    //   if (this.pokemons.length > 1000) {
-      
-
-    //   }
-    //  const nuevoArr = Array(20);
-    //  this.pokemons.push(...nuevoArr);
-    //  event.target.complete();
-    // }, 1000);
-    
-    
-    
-    // setTimeout(() => {
-
-      
-    //   // final
-    //   event.target.complete();
-    //   this.infiniteScroll.disabled = true;
-    //   return;
-    // }, 1000)
   }
 
-  // if(favorites){
-  //   setTimeout(() => this.favoritePokemos(), 3000);
-  // }
-
-  // favoritePokemos() {
-  //   const getFavorites: string = '[' + localStorage.getItem('favorites') +']';
-  //   const favoriteDetails = [];
-  //   for(const objectId of JSON.parse(getFavorites)) {
-  //     if(objectId && objectId.id) {
-  //       favoriteDetails.push(this.pokemons.filter(pokemon => pokemon.id == objectId?.id)[0])
-  //     }
-  //   }
-  //   this.pokemons = favoriteDetails;
-  // }
-
+ 
   filterPokemon(type) {
+    
     const filterPokemon = this.pokemons.filter(
       (pokemon) => pokemon.types[0].type.name == type
     );
     this.pokemons = filterPokemon;
+    
+    console.log(this.pokemons)
+    
   }
+  
 
   filterHability(hability) {
     console.log(this.pokemons);
